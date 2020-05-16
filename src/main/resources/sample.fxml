@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.n1kk1.kotlinRESTClient.Controller">
+   <Button fx:id="postButton1" layoutX="68.0" layoutY="66.0" mnemonicParsing="false" onAction="#postClick1" text="POST REQUEST" />
+   <Button fx:id="getAllButton" layoutX="68.0" layoutY="103.0" mnemonicParsing="false" onAction="#getClick" text="GET REQUEST" />
+   <Button fx:id="updateButton" layoutX="68.0" layoutY="140.0" mnemonicParsing="false" onAction="#updateClick" text="UPDATE REQUEST" />
+   <Button fx:id="deleteButton" layoutX="68.0" layoutY="176.0" mnemonicParsing="false" onAction="#deleteClick" text="DELETE REQUEST" />
+   <TextArea fx:id="responseField" editable="false" layoutX="244.0" layoutY="57.0" prefHeight="234.0" prefWidth="349.0" wrapText="true" />
+   <Text layoutX="244.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 600;" text="Response:" />
+   <TextField fx:id="enterIdField" layoutX="3.0" layoutY="300.0" onAction="#pressedEnter" opacity="0.0" />
+   <Label fx:id="enterIdLabel" layoutX="3.0" layoutY="285.0" opacity="0.0" text="Enter the number of clients:" />
+   <Text fx:id="responseTimeText" layoutX="244.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Average response time:" visible="false" />
+   <Text fx:id="responseTime" layoutX="402.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="60.0" />
+   <TextArea fx:id="responseTimePerRequest" editable="false" layoutX="244.0" layoutY="320.0" prefHeight="54.0" prefWidth="349.0" />
+   <Text layoutX="244.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: 600;" text="Response time per request:" />
+   <Text fx:id="minResponseText" layoutX="244.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minimum response time:" visible="false" wrappingWidth="170.248046875" />
+   <Text fx:id="minResponse" layoutX="411.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="60.0" />
+   <Text fx:id="maxResponseText" layoutX="244.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum response time:" visible="false" wrappingWidth="170.248046875" />
+   <Text fx:id="maxResponse" layoutX="415.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="60.0" />
+   <Button fx:id="all4Button" layoutX="68.0" layoutY="213.0" mnemonicParsing="false" onAction="#all4Click" text="ALL 4 REQUESTS" />
+   <Button fx:id="unsetCorrIdButton" layoutX="68.0" layoutY="250.0" mnemonicParsing="false" onAction="#unsetCorrIdClick" text="Unset correlationId" />
+   <Text fx:id="correlationId" layoutX="14.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CorrelationId is: 1" />
+   <Button fx:id="throughputTestButton" layoutX="14.0" layoutY="447.0" mnemonicParsing="false" onAction="#throughputTestClick" text="Test throughput" />
+   <Text fx:id="fileSize" layoutX="14.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File size is:" visible="false" />
+   <Text fx:id="responseThroughput" layoutX="14.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Response time:" visible="false" />
+   <Text fx:id="throughputTest" layoutX="14.0" layoutY="525.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Throughput is:" visible="false" />
+   <ImageView fx:id="imageView" fitHeight="168.0" fitWidth="340.0" layoutX="244.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true" />
+   <Text fx:id="receivedImage" layoutX="244.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Received image:" visible="false" />
+   <Button fx:id="chooseButton" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#chooseClick" text="Choose CSV file" />
+   <Button fx:id="resetOpenedFile" layoutX="14.0" layoutY="381.0" mnemonicParsing="false" onAction="#resetOpenedFileClick" text="Reset opened file" />
+   <Text fx:id="openedFile" layoutX="14.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opened file:" visible="false" />
+</Pane>
