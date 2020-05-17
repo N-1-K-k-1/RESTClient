@@ -1,7 +1,7 @@
 ﻿- [Quick start guide: how to use client.](#quick-start-guide)
-  * [Main window](#main-window)
-- [Build and run application](#build-and-run-application)
-<a name="quick-start-guide"></a>
+  * [Main window](#markdown-head)
+- [Build and run application](#markdown-header-build-and-run-application)
+
 ## Quick start guide
 
 There are few buttons on the UI, five of them for query execution. Every response time result is saved to a file TestResponse.csv.
@@ -11,10 +11,9 @@ Parameter "CorrelationId" is responsible for variable that changes after each th
 There are some problem using it with different servers — it is about changing the IP address of the server in the code. Immutable variable reqUrl should be changed in files: *All4Requests.kt, DeleteCustomer.kt, GetCustomer.kt, PostCustomer.kt, Throughput.kt* and *UpdateCustomer.kt*. In the near future I plan to add the ability to change the IP adress from the UI. 
 So, there is example of using the client:  
 
-<a name="main-window"></a>
  1.**Main window**  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/main.png =500x)
- <a name="post-request"></a>  
+ 
  2.**POST REQUEST**  
  After clicking POST REQUEST button you should enter the number of clients.  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/POST1.png =500x)  
@@ -51,7 +50,7 @@ So, there is example of using the client:
  When you want to save the measurement results to the existing file, you need to open this file.  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/CHOOSEFILE.png =500x)  
  And if you want to save resuls to the new file press the Reset opened file button.  
-<a name="build-and-run-application"></a>
+
 ##Build and run application
  Using maven, you can run the application by using: 
      
