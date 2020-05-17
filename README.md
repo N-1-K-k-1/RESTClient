@@ -51,7 +51,7 @@ So, there is example of using the client:
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/CHOOSEFILE.png =500x)  
  And if you want to save resuls to the new file press the Reset opened file button.  
 
-##Build and run application
+## Build and run application
  Using maven, you can run the application by using: 
      
      ./mvnw clean install
