@@ -1,5 +1,5 @@
-﻿- [Quick start guide: how to use client.](#quick-start-guide)
-  * [Main window](#markdown-head)
+﻿- [Quick start guide: how to use client.](#markdown-header-quick-start-guide)
+  * [Main window](#markdown-header-main-window)
 - [Build and run application](#markdown-header-build-and-run-application)
 
 ## Quick start guide
@@ -11,7 +11,7 @@ Parameter "CorrelationId" is responsible for variable that changes after each th
 There are some problem using it with different servers — it is about changing the IP address of the server in the code. Immutable variable reqUrl should be changed in files: *All4Requests.kt, DeleteCustomer.kt, GetCustomer.kt, PostCustomer.kt, Throughput.kt* and *UpdateCustomer.kt*. In the near future I plan to add the ability to change the IP adress from the UI. 
 So, there is example of using the client:  
 
- 1.**Main window**  
+ 1. #### **Main window**  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/main.png =500x)
  
  2.**POST REQUEST**  
