@@ -1,4 +1,6 @@
-﻿- [Quick start guide: how to use client.](#markdown-header-quick-start-guide-how-to-use-client)  
+﻿## Table of Contents
+
+- [Quick start guide: how to use client.](#markdown-header-quick-start-guide-how-to-use-client)  
   1. [Main window](#markdown-header-main-window)  
   2. [POST REQUEST](#markdown-header-post-request)  
   3. [GET REQUEST](#markdown-header-get-request)  
@@ -60,6 +62,7 @@ So, there is example of using the client:
  And if you want to save resuls to the new file press the Reset opened file button.  
 
 ## Build and run application
+
  Using maven, you can run the application by using: 
      
      ./mvnw clean install
