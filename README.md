@@ -1,8 +1,16 @@
-﻿- [Quick start guide: how to use client.](#markdown-header-quick-start-guide)
-  * [Main window](#markdown-header-main-window)
+﻿- [Quick start guide: how to use client.](#markdown-header-quick-start-guide-how-to-use-client)
+  1. [Main window](#markdown-header-main-window)
+  2. [POST REQUEST](#markdown-header-post-request)
+  3. [GET REQUEST](#markdown-header-get-request)
+  4. [UPDATE REQUEST](#markdown-header-update-request)
+  5. [DELETE REQUEST](#markdown-header-delete-request)
+  6. [ALL 4 REQUESTS](#markdown-header-all-4-requests)
+  7. [Unset correlationId](#markdown-header-unset-correlationid)
+  8. [Test throughput](#markdown-header-test-throughput)
+  9. [Choose CSV FILE, Reset opened file](#markdown-header-choose-csv-file-reset-opened-file)
 - [Build and run application](#markdown-header-build-and-run-application)
 
-## Quick start guide
+## Quick start guide: how to use client
 
 There are few buttons on the UI, five of them for query execution. Every response time result is saved to a file TestResponse.csv.
 Also, there are buttons to choose CSV file, if you want to add the new response time result to the existing file, and button to test throughput. 
