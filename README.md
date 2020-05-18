@@ -18,7 +18,7 @@ There are few buttons on the UI, five of them for query execution. Every respons
 Also, there are buttons to choose CSV file, if you want to add the new response time result to the existing file, and button to test throughput. 
 Parameter "CorrelationId" is responsible for variable that changes after each thread executes a request and this variable is a parameter that is passed to the POST, GET, PUT, DELETE functions as an ID parameter. It can be reset by pressing the Unset correlationId button.
 
-There are some problem using it with different servers — it is about changing the IP address of the server in the code. Immutable variable *reqUrl* should be changed in files: *All4Requests.kt*, *DeleteCustomer.kt*, *GetCustomer.kt*, *PostCustomer.kt*, *Throughput.kt* and *UpdateCustomer.kt*. In the near future I plan to add the ability to change the IP adress from the UI. 
+There are some problem using it with different servers — it is about changing the IP address of the server in the code. Immutable variable *reqUrl* should be changed in files: *All4Requests.kt*, *DeleteCustomer.kt*, *GetCustomer.kt*, *PostCustomer.kt*, *Throughput.kt* and *UpdateCustomer.kt*. In the near future I plan to add the ability to change the IP address from the UI. 
 So, there is example of using the client:  
 
  1. #### **Main window**  
