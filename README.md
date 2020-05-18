@@ -59,7 +59,7 @@ So, there is example of using the client:
  9. #### **Choose CSV file, Reset opened file**  
  When you want to save the measurement results to the existing file, you need to open this file.  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/CHOOSEFILE.png =500x)  
- And if you want to save resuls to the new file press the Reset opened file button.  
+ And if you want to save results to the new file press the Reset opened file button.  
 
 ## Build and run application
 
