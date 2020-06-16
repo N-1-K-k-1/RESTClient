@@ -3,7 +3,7 @@ package ru.n1kk1.kotlinRESTClient.clientService
 import java.net.URL
 
 class Throughput {
-    private val reqUrl = "http://192.168.0.34:8081/"
+    private val reqUrl = "http://192.168.0.83:8081/"
 
     var timeTest: Long = 0
 

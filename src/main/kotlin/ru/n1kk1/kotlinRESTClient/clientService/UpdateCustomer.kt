@@ -9,7 +9,7 @@ import java.util.logging.Logger
 class UpdateCustomer : Runnable {
 
     private val timeCode: TimeCode = TimeCode()
-    private val reqUrl = "http://192.168.0.34:8081/customers"
+    private val reqUrl = "http://192.168.0.83:8081/customers"
     private val updatedInputStream = "<customer>" +
             "<firstName>updatedFirstName</firstName>" +
             "<lastName>updatedLastName</lastName>" +

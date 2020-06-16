@@ -18,7 +18,7 @@ class WriteCSV {
             fileWriter.append(',')
             fileWriter.append(clientQuantity.toString())
             fileWriter.append(',')
-            fileWriter.append((TimeCode.responseTimeArrLong.sum() / clientQuantity).toString())
+            fileWriter.append((TimeCode.responseTimeArrLong.sum() / TimeCode.responseTimeArr.size).toString())
 
             println("CSV written successfully!")
         } catch (e: Exception) {
@@ -46,7 +46,7 @@ class WriteCSV {
             fileWriter.append(',')
             fileWriter.append(clientQuantity.toString())
             fileWriter.append(',')
-            fileWriter.append((TimeCode.responseTimeArrLong.sum() / clientQuantity).toString())
+            fileWriter.append((TimeCode.responseTimeArrLong.sum() / TimeCode.responseTimeArr.size).toString())
 
             println("CSV written successfully!")
         } catch (e: Exception) {

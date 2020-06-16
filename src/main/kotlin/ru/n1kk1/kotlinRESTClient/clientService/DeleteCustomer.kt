@@ -9,7 +9,7 @@ import java.util.logging.Logger
 class DeleteCustomer : Runnable {
 
     private val timeCode: TimeCode = TimeCode()
-    private val reqUrl = "http://192.168.0.34:8081/customers"
+    private val reqUrl = "http://192.168.0.83:8081/customers"
     private var responseInt = 0
 
     override fun run() {

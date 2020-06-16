@@ -98,12 +98,11 @@ class Controller {
 
     @FXML
     fun getClick(event: ActionEvent) {
-        responseTime.isVisible = true
-        responseTimeText.isVisible = true
-        minResponse.isVisible = true
-        minResponseText.isVisible = true
-        maxResponse.isVisible = true
-        maxResponseText.isVisible = true
+        enterIdLabel.text = "Enter the number of clients:"
+        enterIdField.text = ""
+        action = 3
+        enterIdField.opacity = 1.0
+        enterIdLabel.opacity = 1.0
         fileSize.isVisible = false
         throughputTest.isVisible = false
         responseThroughput.isVisible = false
@@ -111,51 +110,15 @@ class Controller {
         imageView.image = null
         GetCustomer.unsetResponse()
         TimeCode.unsetCompanion()
-
-        responseTimePerRequest.text = ""
-        responseField.text = ""
-
-        val thread = arrayOfNulls<Thread>(clientQuantity)
-
-        for (i in 0 until clientQuantity) {
-            thread[i] = Thread(GetCustomer(), "<Thread-$i>")
-            thread[i]!!.start()
-        }
-        for (i in 0 until clientQuantity) {
-            thread[i]?.join()
-        }
-        responseField.text = GetCustomer.responseXml
-        for(i in 0 until clientQuantity) {
-            responseTimePerRequest.text += TimeCode.responseTimeArr[i]
-        }
-        responseTimeText.isVisible = true
-        responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/clientQuantity)}" + " ms"
-        responseTime.fill = Color.ORANGE
-        minResponseText.isVisible = true
-        minResponse.text = TimeCode.responseMin.toString()
-        minResponse.fill = Color.GREEN
-        maxResponseText.isVisible = true
-        maxResponse.text = TimeCode.responseMax.toString()
-        maxResponse.fill = Color.RED
-        correlationId.text = "CorrelationId is: ${GetCustomer.getCorrId()}"
-
-        val csvWriter = WriteCSV()
-        if (file != null) {
-            csvWriter.writeExistingCsvResponse(file!!.name, "GET", clientQuantity)
-        }
-        else if (file == null) {
-            csvWriter.writeNewCsvResponse("GET", clientQuantity)
-        }
     }
 
     @FXML
     fun updateClick(event: ActionEvent) {
-        responseTime.isVisible = true
-        responseTimeText.isVisible = true
-        minResponse.isVisible = true
-        minResponseText.isVisible = true
-        maxResponse.isVisible = true
-        maxResponseText.isVisible = true
+        enterIdLabel.text = "Enter the number of clients:"
+        enterIdField.text = ""
+        action = 4
+        enterIdField.opacity = 1.0
+        enterIdLabel.opacity = 1.0
         fileSize.isVisible = false
         throughputTest.isVisible = false
         responseThroughput.isVisible = false
@@ -163,52 +126,15 @@ class Controller {
         imageView.image = null
         UpdateCustomer.unsetResponse()
         TimeCode.unsetCompanion()
-
-        responseTimePerRequest.text = ""
-        responseField.text = ""
-
-        val thread = arrayOfNulls<Thread>(clientQuantity)
-
-        for (i in 0 until clientQuantity) {
-            thread[i] = Thread(UpdateCustomer(), "<Thread-$i>")
-            thread[i]!!.start()
-        }
-        for (i in 0 until clientQuantity) {
-            thread[i]?.join()
-        }
-        responseField.text = UpdateCustomer.response
-        for(i in 0 until clientQuantity) {
-            println("response time: ${TimeCode.responseTimeArr[i]}")
-            responseTimePerRequest.text += TimeCode.responseTimeArr[i]
-        }
-        responseTimeText.isVisible = true
-        responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/clientQuantity)}" + " ms"
-        responseTime.fill = Color.ORANGE
-        minResponseText.isVisible = true
-        minResponse.text = TimeCode.responseMin.toString()
-        minResponse.fill = Color.GREEN
-        maxResponseText.isVisible = true
-        maxResponse.text = TimeCode.responseMax.toString()
-        maxResponse.fill = Color.RED
-        correlationId.text = "CorrelationId is: ${UpdateCustomer.getCorrId()}"
-
-        val csvWriter = WriteCSV()
-        if (file != null) {
-            csvWriter.writeExistingCsvResponse(file!!.name, "PUT", clientQuantity)
-        }
-        else if (file == null) {
-            csvWriter.writeNewCsvResponse("PUT", clientQuantity)
-        }
     }
 
     @FXML
     fun deleteClick(event: ActionEvent) {
-        responseTime.isVisible = true
-        responseTimeText.isVisible = true
-        minResponse.isVisible = true
-        minResponseText.isVisible = true
-        maxResponse.isVisible = true
-        maxResponseText.isVisible = true
+        enterIdLabel.text = "Enter the number of clients:"
+        enterIdField.text = ""
+        action = 5
+        enterIdField.opacity = 1.0
+        enterIdLabel.opacity = 1.0
         fileSize.isVisible = false
         throughputTest.isVisible = false
         responseThroughput.isVisible = false
@@ -216,41 +142,6 @@ class Controller {
         imageView.image = null
         DeleteCustomer.unsetResponse()
         TimeCode.unsetCompanion()
-
-        responseTimePerRequest.text = ""
-        responseField.text = ""
-
-        val thread = arrayOfNulls<Thread>(clientQuantity)
-
-        for (i in 0 until clientQuantity) {
-            thread[i] = Thread(DeleteCustomer(), "<Thread-$i>")
-            thread[i]!!.start()
-        }
-        for (i in 0 until clientQuantity) {
-            thread[i]?.join()
-        }
-        responseField.text = DeleteCustomer.response
-        for(i in 0 until clientQuantity) {
-            responseTimePerRequest.text += TimeCode.responseTimeArr[i]
-        }
-        responseTimeText.isVisible = true
-        responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/clientQuantity)}" + " ms"
-        responseTime.fill = Color.ORANGE
-        minResponseText.isVisible = true
-        minResponse.text = TimeCode.responseMin.toString()
-        minResponse.fill = Color.GREEN
-        maxResponseText.isVisible = true
-        maxResponse.text = TimeCode.responseMax.toString()
-        maxResponse.fill = Color.RED
-        correlationId.text = "CorrelationId is: ${DeleteCustomer.getCorrId()}"
-
-        val csvWriter = WriteCSV()
-        if (file != null) {
-            csvWriter.writeExistingCsvResponse(file!!.name, "DELETE", clientQuantity)
-        }
-        else if (file == null) {
-            csvWriter.writeNewCsvResponse("DELETE", clientQuantity)
-        }
     }
 
     @FXML
@@ -303,7 +194,7 @@ class Controller {
         minResponseText.isVisible = false
         maxResponse.isVisible = false
         maxResponseText.isVisible = false
-        action = 3
+        action = 6
         enterIdField.opacity = 1.0
         enterIdLabel.opacity = 1.0
         enterIdLabel.text = "Enter file name:"
@@ -332,18 +223,18 @@ class Controller {
                 for (i in 0 until clientQuantity) {
                     thread[i]?.join()
                 }
-                for(i in 0 until clientQuantity) {
+                for(i in 0 until TimeCode.responseTimeArr.size) {
                     responseTimePerRequest.text += TimeCode.responseTimeArr[i]
                 }
                 responseField.text = PostCustomer.response
                 responseTimeText.isVisible = true
-                responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/clientQuantity)}" + " ms"
+                responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/TimeCode.responseTimeArr.size)}" + " ms"
                 responseTime.fill = Color.ORANGE
                 minResponseText.isVisible = true
-                minResponse.text = TimeCode.responseMin.toString()
+                minResponse.text = TimeCode.responseMin.toString() + " ms"
                 minResponse.fill = Color.GREEN
                 maxResponseText.isVisible = true
-                maxResponse.text = TimeCode.responseMax.toString()
+                maxResponse.text = TimeCode.responseMax.toString() + " ms"
                 maxResponse.fill = Color.RED
                 correlationId.text = "CorrelationId is: ${PostCustomer.getCorrId()}"
 
@@ -378,17 +269,17 @@ class Controller {
                     thread[i]?.join()
                 }
                 responseField.text = All4Requests.response
-                for(i in 0 until clientQuantity) {
+                for(i in 0 until TimeCode.responseTimeArr.size) {
                     responseTimePerRequest.text += TimeCode.responseTimeArr[i]
                 }
                 responseTimeText.isVisible = true
-                responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/clientQuantity)}" + " ms"
+                responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/TimeCode.responseTimeArr.size)}" + " ms"
                 responseTime.fill = Color.ORANGE
                 minResponseText.isVisible = true
-                minResponse.text = TimeCode.responseMin.toString()
+                minResponse.text = TimeCode.responseMin.toString() + " ms"
                 minResponse.fill = Color.GREEN
                 maxResponseText.isVisible = true
-                maxResponse.text = TimeCode.responseMax.toString()
+                maxResponse.text = TimeCode.responseMax.toString() + " ms"
                 maxResponse.fill = Color.RED
                 correlationId.text = "CorrelationId is: ${All4Requests.getCorrId()}"
 
@@ -401,8 +292,139 @@ class Controller {
                 }
 
             }
-
             3 -> {
+                responseTime.isVisible = true
+                responseTimeText.isVisible = true
+                minResponse.isVisible = true
+                minResponseText.isVisible = true
+                maxResponse.isVisible = true
+                maxResponseText.isVisible = true
+                responseTimePerRequest.text = ""
+                responseField.text = ""
+                clientQuantity = enterIdField.text.toInt()
+
+                val thread = arrayOfNulls<Thread>(clientQuantity)
+
+                for (i in 0 until clientQuantity) {
+                    thread[i] = Thread(GetCustomer(), "<Thread-$i>")
+                    thread[i]!!.start()
+                }
+                for (i in 0 until clientQuantity) {
+                    thread[i]?.join()
+                }
+                responseField.text = GetCustomer.responseXml
+                for(i in 0 until TimeCode.responseTimeArr.size) {
+                    responseTimePerRequest.text += TimeCode.responseTimeArr[i]
+                }
+                responseTimeText.isVisible = true
+                responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/TimeCode.responseTimeArr.size)}" + " ms"
+                responseTime.fill = Color.ORANGE
+                minResponseText.isVisible = true
+                minResponse.text = TimeCode.responseMin.toString() + " ms"
+                minResponse.fill = Color.GREEN
+                maxResponseText.isVisible = true
+                maxResponse.text = TimeCode.responseMax.toString() + " ms"
+                maxResponse.fill = Color.RED
+                correlationId.text = "CorrelationId is: ${GetCustomer.getCorrId()}"
+
+                val csvWriter = WriteCSV()
+                if (file != null) {
+                    csvWriter.writeExistingCsvResponse(file!!.name, "GET", clientQuantity)
+                }
+                else if (file == null) {
+                    csvWriter.writeNewCsvResponse("GET", clientQuantity)
+                }
+            }
+            4 -> {
+                responseTime.isVisible = true
+                responseTimeText.isVisible = true
+                minResponse.isVisible = true
+                minResponseText.isVisible = true
+                maxResponse.isVisible = true
+                maxResponseText.isVisible = true
+                responseTimePerRequest.text = ""
+                responseField.text = ""
+                clientQuantity = enterIdField.text.toInt()
+
+                val thread = arrayOfNulls<Thread>(clientQuantity)
+
+                for (i in 0 until clientQuantity) {
+                    thread[i] = Thread(UpdateCustomer(), "<Thread-$i>")
+                    thread[i]!!.start()
+                }
+                for (i in 0 until clientQuantity) {
+                    thread[i]?.join()
+                }
+                responseField.text = UpdateCustomer.response
+                for(i in 0 until TimeCode.responseTimeArr.size) {
+                    println("response time: ${TimeCode.responseTimeArr[i]}")
+                    responseTimePerRequest.text += TimeCode.responseTimeArr[i]
+                }
+                responseTimeText.isVisible = true
+                responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/TimeCode.responseTimeArr.size)}" + " ms"
+                responseTime.fill = Color.ORANGE
+                minResponseText.isVisible = true
+                minResponse.text = TimeCode.responseMin.toString() + " ms"
+                minResponse.fill = Color.GREEN
+                maxResponseText.isVisible = true
+                maxResponse.text = TimeCode.responseMax.toString() + " ms"
+                maxResponse.fill = Color.RED
+                correlationId.text = "CorrelationId is: ${UpdateCustomer.getCorrId()}"
+
+                val csvWriter = WriteCSV()
+                if (file != null) {
+                    csvWriter.writeExistingCsvResponse(file!!.name, "PUT", clientQuantity)
+                }
+                else if (file == null) {
+                    csvWriter.writeNewCsvResponse("PUT", clientQuantity)
+                }
+
+            }
+            5 -> {
+                responseTime.isVisible = true
+                responseTimeText.isVisible = true
+                minResponse.isVisible = true
+                minResponseText.isVisible = true
+                maxResponse.isVisible = true
+                maxResponseText.isVisible = true
+                responseTimePerRequest.text = ""
+                responseField.text = ""
+                clientQuantity = enterIdField.text.toInt()
+
+                val thread = arrayOfNulls<Thread>(clientQuantity)
+
+                for (i in 0 until clientQuantity) {
+                    thread[i] = Thread(DeleteCustomer(), "<Thread-$i>")
+                    thread[i]!!.start()
+                }
+                for (i in 0 until clientQuantity) {
+                    thread[i]?.join()
+                }
+                responseField.text = DeleteCustomer.response
+                for(i in 0 until TimeCode.responseTimeArr.size) {
+                    responseTimePerRequest.text += TimeCode.responseTimeArr[i]
+                }
+                responseTimeText.isVisible = true
+                responseTime.text = "${(TimeCode.responseTimeArrLong.sum()/TimeCode.responseTimeArr.size)}" + " ms"
+                responseTime.fill = Color.ORANGE
+                minResponseText.isVisible = true
+                minResponse.text = TimeCode.responseMin.toString() + " ms"
+                minResponse.fill = Color.GREEN
+                maxResponseText.isVisible = true
+                maxResponse.text = TimeCode.responseMax.toString() + " ms"
+                maxResponse.fill = Color.RED
+                correlationId.text = "CorrelationId is: ${DeleteCustomer.getCorrId()}"
+
+                val csvWriter = WriteCSV()
+                if (file != null) {
+                    csvWriter.writeExistingCsvResponse(file!!.name, "DELETE", clientQuantity)
+                }
+                else if (file == null) {
+                    csvWriter.writeNewCsvResponse("DELETE", clientQuantity)
+                }
+
+            }
+            6 -> {
                 val throughput = Throughput()
                 fileSize.isVisible = true
                 throughputTest.isVisible = true
