@@ -31,7 +31,6 @@ So, there is example of using the client:
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/POST2.png =500x)
 
  3. #### **GET REQUEST**  
- When you press GET REQUEST, UPDATE REQUEST, DELETE REQUEST buttons, you don't need to enter the number of clients because it was saved.  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/GET.png =500x)
 
  4. #### **UPDATE REQUEST**  
