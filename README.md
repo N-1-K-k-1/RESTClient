@@ -40,7 +40,7 @@ So, there is example of using the client:
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/DELETE.png =500x)  
 
  6. #### **ALL 4 REQUESTS**  
- When you push ALL 4 REQUESTS button you need to enter the number of clients again, because this button executes all previous requests together.  
+ This button executes all previous requests together.  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/ALLFOUR1.png =500x)  
  After that, press ENTER and you will see response time of the four requests and response of the last (DELETE) request.  
  ![enter image description here](https://bitbucket.org/N1Kk1/kotlinrestclient/raw/698b1c2a0c1bef9338a4a120a42533c72479bcaf/imgs/ALLFOUR2.png =500x)  
